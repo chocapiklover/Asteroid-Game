@@ -51,6 +51,13 @@ def main():
                 print("Game over!")
                 running = False
         
+        for asteroid in asteroids:
+            for shot in shots:
+                if shot.collision(asteroid):
+                    asteroid.split()
+                    shot.kill()
+
+        
         pygame.display.flip()
 
 if __name__ == "__main__":
